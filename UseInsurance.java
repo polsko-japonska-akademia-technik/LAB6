@@ -1,10 +1,12 @@
-
+/*
+Autor: Adrian Matyszczak 25.05.2019
+ */
 public class UseInsurance
 {
     lass Health extends Insurance {
 
-	public Health(String insuranceType) {
-        super(insuranceType);
+	public Health(String UseInsuranceType) {
+        super(UseInsuranceType);
         setCost();
     }
 
