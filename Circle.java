@@ -1,17 +1,22 @@
 /*
 Autor: Adrian Matyszczak 25.05.2019
  */
-public abstract class Circle
+public class Circle implements GeometricObject
 {
+    protected double radius = 1.0d;
     public Circle(double radius)
+
     {
         this.radius=radius;
     }
-    public abstract double getPerimeter();
+    @Override
+    public double getPermeter()
     {
+        return 2*Math.PI*radius; ;
     }
+    @Override
     public double getArea()
     {
-        return 0;
+        return Math.PI*Math.pow(radius,2);
     }
 }

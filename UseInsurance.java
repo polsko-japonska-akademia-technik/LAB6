@@ -1,38 +1,38 @@
 /*
 Autor: Adrian Matyszczak 25.05.2019
  */
+
+import java.util.Scanner;
+
 public class UseInsurance
 {
-    lass Health extends Insurance {
-
-	public Health(String UseInsuranceType) {
-        super(UseInsuranceType);
-        setCost();
-    }
-
-    @Override
-    public void setCost() {
-        this.monthlyPrice = 196;
-    }
-
-    @Override
-    public void display() {
-        System.out.printf("InsuranceType : %s\nMonthly Price : %.2f\n", insuranceType, monthlyPrice);
-    }
-
-}
-
-    abstract class Insurance {
-
-        public String insuranceType;
-        public double monthlyPrice;
-
-        public Insurance(String insuranceType) {
-            this.insuranceType = insuranceType;
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Choise Life or Health?");
+        String typ = input.next();
+        switch (typ)
+        {
+            case "Life":
+            {
+                Life life = new Life();
+                life.setCost();
+                life.display();
+                break;
+            }
+            case "Health":
+            {
+                Health health = new Health();
+                health.setCost();
+                health.display();
+                break;
+            }
+            default
+            {
+                System.out.println("Wrong type!! Choise Life or Health");
+                break;
+            }
         }
-
-        public abstract void setCost();
-
-        public abstract void display();
-
+        input.close();
+    }
 }
